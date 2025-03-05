@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.IO Chat Tutorial</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Socket.IO Chat Tutorial</h1>
+        <p class="subtitle">Real-time communication made easy</p>
+      </header>
+
+      <div class="join-container" id="join-container">
+        <div class="join-inner">
+          <h2>Join the Chat</h2>
+          <form id="join-form">
+            <div class="form-control">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Enter your username..."
+                required
+              />
+            </div>
+            <button type="submit" class="btn">Join Chat</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="chat-container" id="chat-container">
+        <div class="chat-sidebar">
+          <h3>Socket.IO Features:</h3>
+          <ul>
+            <li>Real-time bidirectional communication</li>
+            <li>Automatic reconnection</li>
+            <li>Room-based messaging</li>
+            <li>Broadcasting capabilities</li>
+            <li>Fallback to long-polling</li>
+          </ul>
+        </div>
+        <div class="chat-main">
+          <div class="chat-messages" id="chat-messages"></div>
+          <div class="typing-indicator" id="typing-indicator"></div>
+          <div class="chat-form-container">
+            <form id="chat-form">
+              <input
+                id="msg"
+                type="text"
+                placeholder="Type a message..."
+                required
+                autocomplete="off"
+              />
+              <button class="btn"><span>Send</span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
